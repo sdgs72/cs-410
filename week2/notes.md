@@ -163,7 +163,9 @@ For variying length use these
 <h3> How can we leverage an inverted index to score documents quickly?    </h3>
 
 Lesson 2.6
-
+- we use inverted index to get all documents that are related to a word easily. (The inverted index will also contain the term frequency and IDF too in some cases)
+- create accumulators for each document that we want to score
+- get max of accumulators and return document with the highest score
 
 
 
@@ -192,5 +194,6 @@ Prefix is unary
 5 -- 110 01 
 6 -- 110 10 
 7 -- 110 11 (length is 110, meaning that there will be 2 suffix)
-8 -- 1110 
-9 -- 1110 001
+8 -- 1110 000 (prefix = 8, length of offset = 3 , offset = 0 )
+9 -- 1110 001 (prefix = 8, length of offset = 3, offset = 1)
+10 -- 1110 010 (prefix = 8, length of offset = 3 , offset = 2)
